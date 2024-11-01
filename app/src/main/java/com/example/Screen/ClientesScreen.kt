@@ -85,7 +85,7 @@ fun ClientesScreen(navController: NavController, clientesRepository: ClientesRep
                                 onClick = {
                                     navController.navigate("editar_cliente/${cliente.clienteId}")
                                 },
-                                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFFB74D)), // Naranja cálido
+                                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFFB74D)),
                                 modifier = Modifier.weight(1f)
                             ) {
                                 Text("Editar", color = Color(0xFF4E342E))
@@ -98,7 +98,7 @@ fun ClientesScreen(navController: NavController, clientesRepository: ClientesRep
                                         clientesList = clientesRepository.obtenerTodosLosClientes()
                                     }
                                 },
-                                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFD32F2F)), // Rojo fuerte para eliminar
+                                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFD32F2F)),
                                 modifier = Modifier.weight(1f)
                             ) {
                                 Text("Eliminar", color = Color.White)
@@ -117,7 +117,7 @@ fun ClientesScreen(navController: NavController, clientesRepository: ClientesRep
         ) {
             Button(
                 onClick = { navController.popBackStack() },
-                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFFD180)), // Naranja claro
+                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFFD180)),
                 modifier = Modifier
                     .weight(1f)
                     .padding(end = 8.dp)
@@ -127,7 +127,7 @@ fun ClientesScreen(navController: NavController, clientesRepository: ClientesRep
 
             Button(
                 onClick = { navController.navigate("crear_cliente") },
-                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFFAB40)), // Amarillo cálido
+                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFFAB40)),
                 modifier = Modifier.weight(1f)
             ) {
                 Text("Agregar Nuevo Cliente", color = Color(0xFF4E342E))

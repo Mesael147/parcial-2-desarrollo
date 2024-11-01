@@ -63,7 +63,7 @@ fun NavigationComponent(
     val navController = rememberNavController()
 
     NavHost(navController = navController, startDestination = "home") {
-        // Pantalla de inicio
+
         composable("home") {
             HomeScreen(navController = navController)
         }
@@ -85,14 +85,14 @@ fun NavigationComponent(
                 }
             }
 
-            // Verifica si el cliente no es nulo antes de pasar a la pantalla de edición
+
             cliente?.let {
                 EditarClienteScreen(navController = navController, cliente = it, clientesRepository = clientesRepository)
             }
         }
 
 
-        // Pantallas de Productos
+
         composable("productos") {
             ProductosScreen(navController = navController, productosRepository = productosRepository)
         }
@@ -109,7 +109,7 @@ fun NavigationComponent(
                 }
             }
 
-            // Verifica si el producto no es nulo antes de pasar a la pantalla de edición
+
             producto?.let {
                 EditarProductoScreen(
                     navController = navController,
@@ -118,9 +118,6 @@ fun NavigationComponent(
                 )
             }
         }
-
-
-        // Pantallas de Ventas
         composable("ventas") {
             VentasScreen(navController = navController, ventasRepository = ventasRepository)
         }

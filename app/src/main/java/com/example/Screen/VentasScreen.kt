@@ -46,7 +46,7 @@ fun VentasScreen(navController: NavController, ventasRepository: VentasRepositor
 
         LazyColumn(
             verticalArrangement = Arrangement.spacedBy(8.dp),
-            modifier = Modifier.weight(1f)  // Hace que la lista ocupe el espacio disponible
+            modifier = Modifier.weight(1f)
         ) {
             items(ventasList) { ventaConClienteYProducto ->
                 Card(
@@ -93,7 +93,7 @@ fun VentasScreen(navController: NavController, ventasRepository: VentasRepositor
         ) {
             Button(
                 onClick = { navController.popBackStack() },
-                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFFD180)), // Naranja claro
+                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFFD180)),
                 modifier = Modifier
                     .weight(1f)
                     .padding(end = 8.dp)
@@ -103,7 +103,7 @@ fun VentasScreen(navController: NavController, ventasRepository: VentasRepositor
 
             Button(
                 onClick = { navController.navigate("crear_venta") },
-                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFFAB40)), // Amarillo cálido
+                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFFAB40)),
                 modifier = Modifier.weight(1f)
             ) {
                 Text("Agregar Nueva Venta", color = Color(0xFF4E342E))

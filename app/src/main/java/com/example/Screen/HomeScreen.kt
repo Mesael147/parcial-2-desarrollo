@@ -19,7 +19,7 @@ fun HomeScreen(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFFFFF3E0)) // Fondo cálido
+            .background(Color(0xFFFFF3E0))
             .padding(16.dp),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
@@ -27,43 +27,43 @@ fun HomeScreen(navController: NavController) {
         Text(
             text = "Bienvenido a la App de Gestión",
             style = MaterialTheme.typography.headlineMedium,
-            color = Color(0xFF795548),  // Marrón cálido
+            color = Color(0xFF795548),
             fontWeight = FontWeight.Bold
         )
 
         Spacer(modifier = Modifier.height(32.dp))
 
-        // Botón para ver clientes
+
         Button(
             onClick = { navController.navigate("clientes") },
-            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFFAB91)), // Salmón claro
+            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFFAB91)),
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(8.dp)
         ) {
-            Text("Ver Clientes", color = Color(0xFF4E342E))  // Texto marrón oscuro
+            Text("Ver Clientes", color = Color(0xFF4E342E))
         }
 
-        // Botón para ver productos
+
         Button(
             onClick = { navController.navigate("productos") },
-            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFFCC80)), // Naranja claro
+            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFFCC80)),
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(8.dp)
         ) {
-            Text("Ver Productos", color = Color(0xFF5D4037))  // Texto marrón medio
+            Text("Ver Productos", color = Color(0xFF5D4037))
         }
 
-        // Botón para ver ventas
+
         Button(
             onClick = { navController.navigate("ventas") },
-            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFFE082)), // Amarillo cálido
+            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFFE082)),
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(8.dp)
         ) {
-            Text("Ver Ventas", color = Color(0xFF6D4C41))  // Texto marrón oscuro
+            Text("Ver Ventas", color = Color(0xFF6D4C41))
         }
     }
 }

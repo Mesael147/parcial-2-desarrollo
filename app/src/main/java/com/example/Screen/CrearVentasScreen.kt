@@ -34,7 +34,7 @@ fun CrearVentasScreen(
     var selectedCliente by remember { mutableStateOf<Clientes?>(null) }
     var selectedProducto by remember { mutableStateOf<Productos?>(null) }
     var cantidad by remember { mutableStateOf("") }
-    var fechaVenta by remember { mutableStateOf("") } // Nuevo campo para la fecha
+    var fechaVenta by remember { mutableStateOf("") }
     var clientesList by remember { mutableStateOf<List<Clientes>>(emptyList()) }
     var productosList by remember { mutableStateOf<List<Productos>>(emptyList()) }
 
@@ -65,7 +65,7 @@ fun CrearVentasScreen(
                 .padding(horizontal = 8.dp)
         ) {
             Column(modifier = Modifier.padding(16.dp)) {
-                // Selección de Cliente
+
                 Text("Seleccionar Cliente", color = Color(0xFF6D4C41), fontWeight = FontWeight.Bold)
                 clientesList.forEach { cliente ->
                     Row(
@@ -84,7 +84,7 @@ fun CrearVentasScreen(
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                // Selección de Producto
+
                 Text("Seleccionar Producto", color = Color(0xFF6D4C41), fontWeight = FontWeight.Bold)
                 productosList.forEach { producto ->
                     Row(
@@ -102,7 +102,7 @@ fun CrearVentasScreen(
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                // Campo para la cantidad
+
                 OutlinedTextField(
                     value = cantidad,
                     onValueChange = { cantidad = it },
@@ -112,7 +112,7 @@ fun CrearVentasScreen(
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                // Campo para la fecha de venta
+
                 OutlinedTextField(
                     value = fechaVenta,
                     onValueChange = { fechaVenta = it },
@@ -122,7 +122,7 @@ fun CrearVentasScreen(
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                // Botón para guardar la venta
+
                 Button(
                     onClick = {
                         if (selectedCliente != null && selectedProducto != null && cantidad.isNotBlank() && fechaVenta.isNotBlank()) {
@@ -130,7 +130,7 @@ fun CrearVentasScreen(
                                 val parsedDate = try {
                                     SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).parse(fechaVenta) ?: Date()
                                 } catch (e: Exception) {
-                                    Date() // Si la fecha no es válida, usa la fecha actual
+                                    Date()
                                 }
 
                                 val nuevaVenta = Ventas(
@@ -140,7 +140,7 @@ fun CrearVentasScreen(
                                     fecha = parsedDate
                                 )
                                 ventasRepository.insertarVenta(nuevaVenta)
-                                navController.popBackStack() // Regresar a la lista de ventas después de guardar
+                                navController.popBackStack()
                             }
                         }
                     },

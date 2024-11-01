@@ -68,7 +68,7 @@ fun CrearClienteScreen(navController: NavController, clientesRepository: Cliente
                         coroutineScope.launch {
                             val nuevoCliente = Clientes(nombre = nombre, correo = correo)
                             clientesRepository.insertarCliente(nuevoCliente)
-                            navController.popBackStack() // Regresar a la lista de clientes después de agregar
+                            navController.popBackStack()
                         }
                     },
                     modifier = Modifier.fillMaxWidth()

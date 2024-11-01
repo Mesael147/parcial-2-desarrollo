@@ -27,7 +27,7 @@ fun ProductosScreen(navController: NavController, productosRepository: Productos
     val coroutineScope = rememberCoroutineScope()
     var productosList by remember { mutableStateOf<List<Productos>>(emptyList()) }
 
-    // Cargar la lista de productos al inicio
+
     LaunchedEffect(Unit) {
         productosList = productosRepository.obtenerTodosLosProductos()
     }
@@ -90,10 +90,10 @@ fun ProductosScreen(navController: NavController, productosRepository: Productos
                                 onClick = {
                                     navController.navigate("editar_producto/${producto.productoId}")
                                 },
-                                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFFD180)), // Naranja claro
+                                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFFD180)),
                                 modifier = Modifier.weight(1f)
                             ) {
-                                Text("Editar", color = Color(0xFF5D4037)) // Texto marrón oscuro
+                                Text("Editar", color = Color(0xFF5D4037))
                             }
                             Spacer(modifier = Modifier.width(8.dp))
                             Button(
@@ -103,7 +103,7 @@ fun ProductosScreen(navController: NavController, productosRepository: Productos
                                         productosList = productosRepository.obtenerTodosLosProductos()
                                     }
                                 },
-                                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFD32F2F)), // Rojo fuerte
+                                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFD32F2F)),
                                 modifier = Modifier.weight(1f)
                             ) {
                                 Text("Eliminar", color = Color.White)
@@ -116,27 +116,27 @@ fun ProductosScreen(navController: NavController, productosRepository: Productos
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Botones para agregar y regresar en la parte inferior con colores cálidos
+
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Button(
                 onClick = { navController.popBackStack() },
-                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFFD180)), // Naranja claro
+                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFFD180)),
                 modifier = Modifier
                     .weight(1f)
                     .padding(end = 8.dp)
             ) {
-                Text("Regresar a Listado", color = Color(0xFF5D4037)) // Texto marrón oscuro
+                Text("Regresar a Listado", color = Color(0xFF5D4037))
             }
 
             Button(
                 onClick = { navController.navigate("crear_producto") },
-                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFFAB40)), // Amarillo cálido
+                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFFAB40)),
                 modifier = Modifier.weight(1f)
             ) {
-                Text("Agregar Nuevo Producto", color = Color(0xFF4E342E)) // Texto marrón oscuro
+                Text("Agregar Nuevo Producto", color = Color(0xFF4E342E))
             }
         }
     }
